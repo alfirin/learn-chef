@@ -15,6 +15,7 @@ knife cookbook site show mysql | grep latest_version
 
 # Berks -> Upload metadata dependency
 berks install
+berks update
 berks upload
 
 # Data bag
