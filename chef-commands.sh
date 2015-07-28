@@ -1,7 +1,7 @@
 # From the workstation
 
 # Init the project
-knife solo init .
+chef generate cookbook wordpress
 
 # Create the node
 knife bootstrap '172.28.128.3' --bootstrap-version '12.5.0'  --ssh-user 'vagrant' --ssh-password 'vagrant' --sudo --use-sudo-password --node-name node1 --run-list 'recipe[learn_chef_apache2]'
