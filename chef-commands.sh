@@ -1,5 +1,8 @@
 # From the workstation
 
+# Init the project
+knife solo init .
+
 # Create the node
 knife bootstrap '172.28.128.3' --bootstrap-version '12.5.0'  --ssh-user 'vagrant' --ssh-password 'vagrant' --sudo --use-sudo-password --node-name node1 --run-list 'recipe[learn_chef_apache2]'
 knife bootstrap '172.28.128.3' --bootstrap-version '12.5.0' --ssh-user 'vagrant' --ssh-password 'vagrant' --sudo --use-sudo-password --node-name web_app_ubuntu --run-list 'recipe[awesome_customers]'
@@ -31,3 +34,11 @@ knife data bag show passwords sql_server_root_password --secret-file /tmp/encryp
 # Generate
 # Recipe
 chef generate recipe cookbooks/awesome_customers database
+
+# Kitchen
+# Create machine
+kitchen create
+# List the machine
+kitchen list
+# Apply cookbook to the machine
+kitchen converge
